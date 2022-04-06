@@ -21,22 +21,34 @@ public class MirrorArray {
 
     /**
      * Megállapítja egy egész számokat tartalmazó tömbről, hogy az tükörtömb-e vagy sem.
-     *
+     * <p>
      * Tükörtömb az a tömb, amely "visszafelé olvasva" ugyanaz, mint rendesen olvasva.
      * Például:
-     *      [1, 1]
-     *      [1, 2, 1]
-     *      [1, 2, 2, 1]
-     *
+     * [1, 1]
+     * [1, 2, 1]
+     * [1, 2, 2, 1]
+     * <p>
      * Nem tükörtömbök például:
-     *      []
-     *      [0, 1]
-     *      [1, 2, 3]
-     *      [1, 2, 3, 1]
+     * []
+     * [0, 1]
+     * [1, 2, 3]
+     * [1, 2, 3, 1]
      */
     public static boolean isMirrorArray(int[] array) {
-        // write your code here
-        return false;
-    }
+       
 
+        boolean isMirrorArray = array.length > 0;
+
+        for (int i = 0; i < array.length / 2; i++) {
+            int iFromEnd = array.length - 1 - i;
+
+            if (array[i] != array[iFromEnd]) {
+                return false;
+                
+
+            }
+           
+
+        }return isMirrorArray;
+    }
 }
